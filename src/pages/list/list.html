@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>
+      Jadwal Bola
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="liga">
+      <ion-segment-button value="liga">
+        Liga Inggirs
+      </ion-segment-button>
+      <ion-segment-button value="inggris">
+        Liga Spanyol
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div [ngSwitch]="liga">
+    <ion-list *ngSwitchCase="'liga'">
+      <ion-item *ngFor="let items of data">
+        <h2>{{ items.jadwal }} </h2>      
+     </ion-item>
+    </ion-list>
+  </div>
+
+  <div [ngSwitch]="liga">
+    <ion-list *ngSwitchCase="'inggris'">
+      <ion-item *ngFor="let items of data">
+        <h2>{{ items.jadwal }} </h2>      
+     </ion-item>
+     <ion-item *ngFor="let items of data">
+        <h2>{{ items.tanggal }} </h2>
+        <h2>{{ items.jadwal }} </h2>
+        <h2>{{ items.tv }} </h2>
+     </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/girona.jpg">
+        </ion-thumbnail>
+        <h3><b>JUMAT, 22 DESEMBER 2017</b></h3>
+        <h2> Eibar	01:30	Girona FC</h2>
+        <h2> Alavés	03:30	Málaga</h2>
+        
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/download.jpg">
+        </ion-thumbnail>
+        <h3><b>SABTU, 23 DESEMBER 2017 </b></h3>
+        <h2> Real Betis	01:30	Ath. Bilbao</h2>
+        <h2> Espanyol	03:30	Atlético</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/ligaa.jpg">
+        </ion-thumbnail>
+        <h3><b>MINGGU, 24 DESEMBER 2017 </b></h3>
+        <h2> Deportivo	00:30	Celta Vigo</h2>
+      </ion-item>
+    </ion-list>
+    
+  </div>
+
+</ion-content>
+

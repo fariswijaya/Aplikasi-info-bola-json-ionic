@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h3>Jadwal Bola</h3>
+
+  <p>
+    Jadwal bola hari ini
+  </p>
+
+  <ion-card>
+    <img src="https://i0.wp.com/olahraga.pro/wp-content/uploads/2016/09/olahraga-sepak-bola.jpg?w=800&ssl=1"/>
+  </ion-card>
+  <ion-item *ngFor="let items of data">
+      <h2>{{ items.tanggal }} </h2>
+      <h2>{{ items.jadwal }} </h2>
+      <h2>{{ items.tv }} </h2>
+   </ion-item>
+</ion-content>
